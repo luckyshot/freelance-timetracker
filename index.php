@@ -18,7 +18,7 @@
  * Released under Creative Commons Attribution-NonCommercial-ShareAlike
  * https://github.com/luckyshot/freelance-timetracker
  * 
- * Version: 1.0.4
+ * Version: 1.0.5
  */
 
 /**
@@ -59,7 +59,7 @@ if (file_exists($settings['filename'].".json")) {
 if (strlen($data)<3) {
 	$data = '{';
 	for ($i=0; $i < $settings['tasksno']; $i++) { 
-		$data .= '"'.$i.'":{"date":"","client":"","task":"","rate":'.number_format($settings['rate'], 2).',"total":0,"desc":"","timed":""}';
+		$data .= '"'.$i.'":{"date":"","client":"","task":"","rate":'.number_format($settings['rate'], 2).',"total":0,"desc":"","timed":0}';
 		if ($i < $settings['tasksno']-1) {$data .= ',';}
 	}
 	$data .= '}';
@@ -132,6 +132,17 @@ if (strlen($data)<3) {
 	</div>
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+<script>
+var t = {
+	config: {
+		currency: '<?=$settings['currency']?>',
+		rate: '<?=number_format($settings['rate'], 2)?>',
+		savenext: <?=$settings['saveinterval']*1000?>,
+		savedefault: <?=$settings['saveinterval']*1000?>,
+		initialdata: '<?=$data?>'
+	}
+};
+</script>
 <script src="timetracker.js"></script>
 
 </body>
