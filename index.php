@@ -34,30 +34,43 @@ $settings = array(
 );
 
 /**
- * Save file
+ * Save database
  */
 if (isset($_GET['action'])) {
-	if ($_GET['action']=='save' && (strlen($_POST['json'])>3)) {
+	if ($_GET['action']=='save' && (strlen($_POST['json'])>2)) {
 		$filename = $settings['filename'].".json";
-		$filehandle = fopen($filename, 'w') or die("Error: Can't create or save files");
+		$filehandle = fopen($filename, 'w') or die("Error: Can't create or save files, please modify folder permissions");
 		$fwrite = fwrite($filehandle, stripslashes($_POST['json']));
 		fclose($filehandle);
+		echo $fwrite;
+		die();
 	}
-	echo $fwrite;
-	die();
 }
 
+/**
+ * Read database
+ */
 $data = '';
 if (file_exists($settings['filename'].".json")) {
 	$data = file_get_contents($settings['filename'].".json");
 }
+
+// If no database then generate a blank one
 if (strlen($data)<3) {
-	$data = '{"0":{"date":"","client":"","task":"","rate":'.$settings['rate'].',"total":0,"desc":"","timed":""},"1":{"date":"","client":"","task":"","rate":'.number_format($settings['rate'], 2).',"total":0,"desc":"","timed":""},"2":{"date":"","client":"","task":"","rate":'.number_format($settings['rate'], 2).',"total":0,"desc":"","timed":""},"3":{"date":"","client":"","task":"","rate":'.number_format($settings['rate'], 2).',"total":0,"desc":"","timed":""},"4":{"date":"","client":"","task":"","rate":'.number_format($settings['rate'], 2).',"total":0,"desc":"","timed":""},"5":{"date":"","client":"","task":"","rate":'.number_format($settings['rate'], 2).',"total":0,"desc":"","timed":""},"6":{"date":"","client":"","task":"","rate":'.number_format($settings['rate'], 2).',"total":0,"desc":"","timed":""},"7":{"date":"","client":"","task":"","rate":'.number_format($settings['rate'], 2).',"total":0,"desc":"","timed":""},"8":{"date":"","client":"","task":"","rate":'.number_format($settings['rate'], 2).',"total":0,"desc":"","timed":""},"9":{"date":"","client":"","task":"","rate":'.number_format($settings['rate'], 2).',"total":0,"desc":"","timed":""}}';
+	$data = '{';
+	for ($i=0; $i < $settings['tasksno']; $i++) { 
+		$data .= '"'.$i.'":{"date":"","client":"","task":"","rate":'.number_format($settings['rate'], 2).',"total":0,"desc":"","timed":""}';
+		if ($i < $settings['tasksno']-1) {$data .= ',';}
+	}
+	$data .= '}';
 }
 
+/**
+ * HTML
+ */
 ?><!doctype html>
 <head>
-	<title>Timetracker</title>
+	<title>Freelance Timetracker</title>
 	<meta charset="utf-8">
 	<link href="bootstrap.min.css" rel="stylesheet">
 	<style>
@@ -73,21 +86,20 @@ if (strlen($data)<3) {
 </head>
 <body>
 
-
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
-		<div class="container">
-			<a class="brand" href="?">Timetracker</a>
-			<div class="nav-collapse collapse">
-			<ul class="nav pull-right">
-				<li>
-					<form class="navbar-form">
-						<button id="save" class="btn btn-success">Save now</a>
-					</form>
-				</li>
-			</ul>
-			</div><!--/.nav-collapse -->
-		</div>
+			<div class="container">
+				<a class="brand" href="?">Timetracker</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+						<li>
+							<form class="navbar-form">
+								<button id="save" class="btn btn-success">Save now</a>
+							</form>
+						</li>
+					</ul>
+				</div><!--/.nav-collapse -->
+			</div>
 		</div>
 	</div>
 	
