@@ -84,7 +84,7 @@ $(document).ready(function(){
 					'<td><input class="date input-mini" type="text" placeholder="Date" value="'+obj.date+'"></td>' +
 					'<td><input class="client input-mini" type="text" placeholder="Client" value="'+obj.client+'" style="color:'+t.generateColor( obj.client )+'"></td>' +
 					'<td><input class="task input-large" type="text" placeholder="Task" value="'+obj.task+'"></td>' +
-					'<td><input class="rate input-mini" type="text" placeholder="'+obj.rate.toFixed(2)+'" value="'+obj.rate.toFixed(2)+'"></td>' +
+					'<td><input class="rate input-mini" type="text" placeholder="'+obj.rate+'" value="'+obj.rate+'"></td>' +
 					'<td><input class="total input-mini" data-value="'+obj.total+'" type="text" placeholder="'+t.config.currency+obj.total.toFixed(2)+'" value="'+t.config.currency+obj.total.toFixed(2)+'"></td>' +
 					'<td><input class="desc" type="text" placeholder="Notes" value="'+obj.desc+'"></td>' +
 					'<td><input class="timed input-mini" type="text" placeholder="0:00:00" data-value="'+obj.timed+'" value="'+t.niceTime(obj.timed)+'"></td>' +
@@ -133,7 +133,7 @@ $(document).ready(function(){
 			tr.find('.client').val('');
 			tr.find('.total').data('value', 0);
 			tr.find('.total').val(t.config.currency+'0.00');
-			tr.find('.rate').val(t.config.rate.toFixed(2));
+			tr.find('.rate').val(t.config.rate);
 			tr.find('.desc').val('');
 			tr.find('.timed').data('value', 0);
 			tr.find('.timed').val('00:00:00');
