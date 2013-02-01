@@ -14,7 +14,7 @@
    | |  | | | | | | |  __/ |_| | | (_| | (__|   <  __/ |   
    |_|  |_|_| |_| |_|\___|\__|_|  \__,_|\___|_|\_\___|_|   
    
- * Freelance Timetracking by Xavi Esteve
+ * Freelance Timetracker by Xavi Esteve
  * Released under Creative Commons Attribution-NonCommercial-ShareAlike
  * http://xaviesteve.com/
  * 
