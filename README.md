@@ -27,7 +27,7 @@ The code is just one PHP, CSS, JS and JSON file.
 ## How it works
 
 - Twitter Bootstrap gives it styling
-- jQuery/AJAX/JSON sends the information to the back-end (every 10 seconds by default)
+- jQuery/AJAX sends the information to the back-end (every 10 seconds by default)
 - PHP stores everything in a JSON file
 
 This setup makes it extremely easy to install Freelance Timetracker with just a copy-paste and start using straight away. It also makes backing up your stuff super-easy.
