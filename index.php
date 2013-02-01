@@ -59,7 +59,7 @@ if (file_exists($settings['filename'].".json")) {
 if (strlen($data)<3) {
 	$data = '{';
 	for ($i=0; $i < $settings['tasksno']; $i++) { 
-		$data .= '"'.$i.'":{"date":"","client":"","task":"","rate":'.number_format($settings['rate'], 2).',"total":0,"desc":"","timed":0}';
+		$data .= '"'.$i.'":{"date":"","client":"","task":"","rate":'.$settings['rate'].',"total":0,"desc":"","timed":0}';
 		if ($i < $settings['tasksno']-1) {$data .= ',';}
 	}
 	$data .= '}';
