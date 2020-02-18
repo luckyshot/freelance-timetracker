@@ -1,7 +1,7 @@
 ## Freelance Timetracker
 
 
-![Screen](https://raw.githubusercontent.com/renat2985/frelancer_time_tracker/master/screen3.png)
+![Screen](https://raw.githubusercontent.com/renat2985/freelance-timetracker/master/screen3.png)
 
 
 Freelance Timetracker is a free and super-simple web-based timetracking system. All the information is stored in a JSON file so no database is needed.
