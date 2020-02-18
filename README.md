@@ -1,10 +1,11 @@
 ## Freelance Timetracker
 
+
+![Screen](https://raw.githubusercontent.com/renat2985/frelancer_time_tracker/master/screen3.png)
+
+
 Freelance Timetracker is a free and super-simple web-based timetracking system. All the information is stored in a JSON file so no database is needed.
 
-# Recommended alternative: <a href="https://github.com/luckyshot/twentyfive">TwentyFive Pomodoro Time Tracker</a>
-
-![Freelance Timetracking Screenshot](http://xaviesteve.com/wp-content/uploads/2013/02/freelance-timetracker-free.png)
 
 ### 10 second Setup
 
@@ -28,7 +29,7 @@ The code is just one PHP, CSS, JS and JSON file.
 
 ### How it works
 
-- Twitter Bootstrap gives it styling
+- Tailwindcss gives it styling
 - jQuery/AJAX sends the information to the back-end (every 10 seconds by default)
 - PHP stores everything in a JSON file
 
@@ -37,7 +38,8 @@ This setup makes it extremely easy to install Freelance Timetracker with just a 
 
 ### License
 
-Freelance Timetracker is authored by [Xavi Esteve](http://xaviesteve.com/) and is licensed under a MIT License.
+Freelance Timetracker is authored by Xavi Esteve and is licensed under a MIT License.
 
 Feel free to fork it and send any pull requests.
+
 
