@@ -78,6 +78,7 @@ if (strlen($data) < 3) {
 </head>
 <body>
   <!-- partial:index.partial.html -->
+
   <div class="h-screen w-screen bg-indigo-400 overflow-hidden absolute flex items-center">
     <div class="w-screen h-64 absolute top-0 opacity-50 left-0 -my-40 -mx-64 bg-indigo-300 rounded-full"></div>
     <div class="w-64 h-64 -mx-32 bg-indigo-300 opacity-50 rounded-full"></div>
@@ -90,9 +91,9 @@ if (strlen($data) < 3) {
         <div class="p-8 bg-indigo-700 flex items-center">
           <i class="fa fa-clock-o fa-5x mr-4" aria-hidden="true"></i>
           <div class="mr-4">
-          <h2 id="big-time" class="text-4xl font-bold"></h2>
-          <h2 id="big-total" class="text-3xl text-indigo-400 -mt-5"></h2>
-           </div>
+            <h2 id="big-time" class="text-4xl font-bold"></h2>
+            <h2 id="big-total" class="text-3xl text-indigo-400 -mt-5"></h2>
+          </div>
           <div class="mr-auto border-l-4 border-indigo-500 p-4">
             <h1 class="text-xl leading-none mb-1">Time tracker for freelancer</h1>
             <h2 class="text-indigo-400 text-sm">Click the checkbox to start timing a task, edit any fields by clicking on them.</h2>
@@ -101,7 +102,8 @@ if (strlen($data) < 3) {
             <button id="save" class="bg-indigo-600 text-white py-2 text-sm px-3 rounded focus:outline-none">Save now</button>
           </form>
         </div>
-        <div class="p-8 flex flex-1 items-start overflow-auto">
+        <div id="progress" class="nanobar"></div>
+        <div class="pt-4 flex flex-1 items-start overflow-auto">
           <div class="flex-1">
             <div class="flex mb-8">
               <table id="table" class="w-auto">
@@ -147,10 +149,25 @@ if (strlen($data) < 3) {
       border:none;
       box-shadow:none
     }
+    input[type=checkbox] {
+      display: none;
+    }
+    input[type=checkbox]+label:before {
+      font-family: FontAwesome;
+      display: inline-block;
+      cursor: pointer;
+    }
+    input[type=checkbox]+label:before {
+      content: "\f01d";
+      letter-spacing: 10px;
+    }
+    input[type=checkbox]:checked+label:before {
+      letter-spacing: 5px;
+      content: "\f28c";
+    }
   </style>
-
-
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/nanobar/0.4.2/nanobar.min.js"></script>
   <script>
     var t = {
       config: {
@@ -161,9 +178,22 @@ if (strlen($data) < 3) {
         initialdata: '<?=$data ?>'
       }
     };
+    var options = {
+      target: document.getElementById('progress')
+    };
+    var nanobar = new Nanobar(options);
+    $(".bar").addClass("bg-indigo-400");
+    nanobar.go(0);
+    $('.taskrow').click(function() {
+      var CheckBox = $(this).find('input[type="checkbox"]');
+      if (CheckBox.attr('checked')) {
+        CheckBox.attr('checked', false);
+      } else {
+        CheckBox.attr('checked', true);
+      }
+    })
   </script>
   <script src="timetracker.js"></script>
-
   <audio id="notify" src="#"></audio>
 </body>
 </html>

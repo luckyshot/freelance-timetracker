@@ -23,6 +23,9 @@ $(document).ready(function() {
         tr.addClass("shadow-2xl");
         tr.removeClass("opacity-25");
 
+
+        nanobar.go(time_array[1]); // size bar 30%
+
         if ((time_array[1] == '00' || time_array[1] == '30') && time_array[2] == '00') {
           $("#notify").attr("src", "notify30-60.mp3");
           document.getElementById("notify").play();
@@ -100,7 +103,7 @@ $(document).ready(function() {
       var obj = data[key];
       buffer +=
       '<tr id="task-'+key+'" data-id="'+key+'" class="taskrow'+(obj.timed == '0'?' opacity-25': '')+'">' +
-      '<td><input class="timer shadow-md" type="checkbox"></td>' +
+      '<td class="pl-8"><input class="timer shadow-md" id="chek-'+key+'" type="checkbox"><label for="chek-'+key+'" class="text-3xl"></label></td>' +
       '<td><input class="date input-mini text-xs appearance-none border rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline" type="date" placeholder="Date" value="'+obj.date+'"></td>' +
       '<td><i class="fa fa-circle-o" style="color:'+t.generateColor(obj.client)+'" aria-hidden="true"></i></td>' +
       '<td><input class="client input-mini font-bold appearance-none border rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline" type="text" placeholder="Client" value="'+obj.client+'"></td>' +
@@ -109,7 +112,7 @@ $(document).ready(function() {
       '<td><input class="total input-mini text-center text-xl appearance-none border rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline" data-value="'+obj.total+'" type="text" placeholder="'+t.config.currency+obj.total.toFixed(2)+'" value="'+t.config.currency+obj.total.toFixed(2)+'"></td>' +
       '<td><input class="desc text-xs italic appearance-none border rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline" type="text" placeholder="Notes" value="'+obj.desc+'"></td>' +
       '<td><input class="timed input-mini appearance-none border rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline" type="text" placeholder="00:00:00" data-value="'+obj.timed+'" value="'+t.niceTime(obj.timed)+'"></td>' +
-      '<td><button class="delete text-white font-bold py-2 px-4 rounded shadow" title="Clear task"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>' +
+      '<td class="pr-8"><button class="delete text-white font-bold py-2 px-4 rounded shadow" title="Clear task"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>' +
       '</tr>';
     };
     //console.log(buffer);
@@ -222,6 +225,8 @@ themeButtons.forEach(button => {
     localStorage.setItem('theme', e.target.getAttribute('theme-button'));
   });
 });
+
+
 
 
 if (localStorage.getItem('theme')) {
