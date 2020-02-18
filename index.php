@@ -92,20 +92,31 @@ if (strlen($data) < 3) {
           <i class="fa fa-clock-o fa-5x mr-4" aria-hidden="true"></i>
           <div class="mr-4">
             <h2 id="big-time" class="text-4xl font-bold"></h2>
-            <h2 id="big-total" class="text-3xl text-indigo-400 -mt-5"></h2>
+            <h2 id="big-total" class="text-2xl text-indigo-400 -mt-5"></h2>
           </div>
           <div class="mr-auto border-l-4 border-indigo-500 p-4">
-            <h1 class="text-xl leading-none mb-1">Time tracker for freelancer</h1>
-            <h2 class="text-indigo-400 text-sm">Click the checkbox to start timing a task, edit any fields by clicking on them.</h2>
+            <h1 class="text-xl leading-none mb-1" id="client-title">Time tracker for freelancer</h1>
+            <h2 class="text-indigo-400 text-sm" id="client-task">Click the checkbox to start timing a task, edit any fields by clicking on them.</h2>
           </div>
           <form>
             <button id="save" class="bg-indigo-600 text-white py-2 text-sm px-3 rounded focus:outline-none">Save now</button>
           </form>
         </div>
+        <div class="flex -mt-5">
+          <div class="flex-1 text-indigo-500 text-xs text-left pl-4">
+            0 min.
+          </div>
+          <div class="flex-1 text-indigo-500 text-xs text-center">
+            30 min.
+          </div>
+          <div class="flex-1 text-indigo-500 text-xs text-right pr-4">
+            60 min.
+          </div>
+        </div>
         <div id="progress" class="nanobar"></div>
         <div class="pt-4 flex flex-1 items-start overflow-auto">
           <div class="flex-1">
-            <div class="flex mb-8">
+            <div class="flex mb-1">
               <table id="table" class="w-auto">
                 <thead>
                   <tr>

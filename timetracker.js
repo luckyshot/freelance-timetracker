@@ -18,20 +18,24 @@ $(document).ready(function() {
 
         $("#big-time").html(time_array[0]+':'+time_array[1]);
         $("#big-total").html(t.config.currency+total.data('value').toFixed(2));
+        $("#client-title").html(tr.find('.client').val());
+        $("#client-task").html(tr.find('.task').val()+' <i>'+tr.find('.desc').val()+'</i>');
+
+
 
 
         tr.addClass("shadow-2xl");
         tr.removeClass("opacity-25");
 
 
-        nanobar.go(time_array[1]); // size bar 30%
+        nanobar.go(100*time_array[1]/60);
 
         if ((time_array[1] == '00' || time_array[1] == '30') && time_array[2] == '00') {
-          $("#notify").attr("src", "notify30-60.mp3");
+          $("#notify").attr("src", "notify30-60a.mp3");
           document.getElementById("notify").play();
         }
         if ((time_array[1] == '15' || time_array[1] == '45') && time_array[2] == '00') {
-          $("#notify").attr("src", "notify15.mp3");
+          $("#notify").attr("src", "notify15a.mp3");
           document.getElementById("notify").play();
         }
 
@@ -103,7 +107,7 @@ $(document).ready(function() {
       var obj = data[key];
       buffer +=
       '<tr id="task-'+key+'" data-id="'+key+'" class="taskrow'+(obj.timed == '0'?' opacity-25': '')+'">' +
-      '<td class="pl-8"><input class="timer shadow-md" id="chek-'+key+'" type="checkbox"><label for="chek-'+key+'" class="text-3xl"></label></td>' +
+      '<td class="pl-8"><input class="timer" id="chek-'+key+'" type="checkbox"><label for="chek-'+key+'" class="text-3xl"></label></td>' +
       '<td><input class="date input-mini text-xs appearance-none border rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline" type="date" placeholder="Date" value="'+obj.date+'"></td>' +
       '<td><i class="fa fa-circle-o" style="color:'+t.generateColor(obj.client)+'" aria-hidden="true"></i></td>' +
       '<td><input class="client input-mini font-bold appearance-none border rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline" type="text" placeholder="Client" value="'+obj.client+'"></td>' +
