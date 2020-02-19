@@ -15,7 +15,7 @@
    |_|  |_|_| |_| |_|\___|\__|_|  \__,_|\___|_|\_\___|_|   
    
  * Freelance Timetracker by Xavi Esteve http://xaviesteve.com/
- * Released under Creative Commons Attribution-NonCommercial-ShareAlike
+ * Released under MIT License
  * https://github.com/luckyshot/freelance-timetracker
  * 
  * Version: 1.0.5
