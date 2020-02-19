@@ -1,23 +1,23 @@
 <?php
 /*!
- * 
- ______             _                      
-|  ____|           | |                     
-| |__ _ __ ___  ___| | __ _ _ __   ___ ___ 
+ *
+ ______             _
+|  ____|           | |
+| |__ _ __ ___  ___| | __ _ _ __   ___ ___
 |  __| '__/ _ \/ _ \ |/ _` | '_ \ / __/ _ \
 | |  | | |  __/  __/ | (_| | | | | (_|  __/
 |_|  |_|  \___|\___|_|\__,_|_| |_|\___\___|
- _______ _                _                  _             
-|__   __(_)              | |                | |            
-   | |   _ _ __ ___   ___| |_ _ __ __ _  ___| | _____ _ __ 
+ _______ _                _                  _
+|__   __(_)              | |                | |
+   | |   _ _ __ ___   ___| |_ _ __ __ _  ___| | _____ _ __
    | |  | | '_ ` _ \ / _ \ __| '__/ _` |/ __| |/ / _ \ '__|
-   | |  | | | | | | |  __/ |_| | | (_| | (__|   <  __/ |   
-   |_|  |_|_| |_| |_|\___|\__|_|  \__,_|\___|_|\_\___|_|   
-   
- * Freelance Timetracker by Xavi Esteve http://xaviesteve.com/
+   | |  | | | | | | |  __/ |_| | | (_| | (__|   <  __/ |
+   |_|  |_|_| |_| |_|\___|\__|_|  \__,_|\___|_|\_\___|_|
+
+ * Freelance Timetracker by Xavi Esteve https://xaviesteve.com/
  * Released under MIT License
  * https://github.com/luckyshot/freelance-timetracker
- * 
+ *
  * Version: 1.0.5
  */
 
@@ -58,7 +58,7 @@ if (file_exists($settings['filename'].".json")) {
 // If no database then generate a blank one
 if (strlen($data)<3) {
 	$data = '{';
-	for ($i=0; $i < $settings['tasksno']; $i++) { 
+	for ($i=0; $i < $settings['tasksno']; $i++) {
 		$data .= '"'.$i.'":{"date":"","client":"","task":"","rate":'.$settings['rate'].',"total":0,"desc":"","timed":0}';
 		if ($i < $settings['tasksno']-1) {$data .= ',';}
 	}
@@ -102,11 +102,11 @@ if (strlen($data)<3) {
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="container">
 		<div class="row">
 			<div class="span12">
-				
+
 				<table id="table" class="table table-striped">
 					<thead>
 						<tr>
@@ -125,7 +125,7 @@ if (strlen($data)<3) {
 
 				<hr>
 
-				<p><small>Freelance Timetracker by <a href="http://xaviesteve.com/">Xavi Esteve</a></small></p>
+				<p><small>Freelance Timetracker by <a href="https://xaviesteve.com/">Xavi Esteve</a></small></p>
 
 			</div><!--span12-->
 		</div><!--row-->
