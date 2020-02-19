@@ -114,7 +114,7 @@ $(document).ready(function() {
       '<td><input class="task input-large italic appearance-none border rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline" type="text" placeholder="Task" value="'+obj.task+'"></td>' +
       '<td><input class="rate input-mini text-center appearance-none border rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline" type="text" placeholder="'+obj.rate+'" value="'+obj.rate+'"></td>' +
       '<td><input class="total input-mini text-center text-xl appearance-none border rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline" data-value="'+obj.total+'" type="text" placeholder="'+t.config.currency+obj.total.toFixed(2)+'" value="'+t.config.currency+obj.total.toFixed(2)+'"></td>' +
-      '<td><input class="desc text-xs italic appearance-none border rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline" type="text" placeholder="Notes" value="'+obj.desc+'"></td>' +
+      '<td><input class="desc text-xs italic appearance-none border rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline" type="text" placeholder="Note" value="'+obj.desc+'"></td>' +
       '<td><input class="timed input-mini appearance-none border rounded w-full py-2 px-3 focus:outline-none focus:shadow-outline" type="text" placeholder="00:00:00" data-value="'+obj.timed+'" value="'+t.niceTime(obj.timed)+'"></td>' +
       '<td class="pr-8"><button class="delete text-white font-bold py-2 px-4 rounded shadow" title="Clear task"><i class="fa fa-trash-o" aria-hidden="true"></i></button></td>' +
       '</tr>';
