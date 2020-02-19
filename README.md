@@ -37,7 +37,6 @@ This setup makes it extremely easy to install Freelance Timetracker with just a 
 
 ### License
 
-Freelance Timetracker is authored by [Xavi Esteve](http://xaviesteve.com/) and is licensed under a MIT License.
+Freelance Timetracker is authored by [Xavi Esteve](http://xaviesteve.com/) and is licensed under the [MIT license](http://opensource.org/licenses/MIT).
 
 Feel free to fork it and send any pull requests.
-
