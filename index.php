@@ -74,6 +74,8 @@ if (strlen($data) < 3) {
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.1.4/tailwind.min.css" />
   <!--Fonts and icons -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" />
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="favicon.png">
 </head>
 <body>
   <!-- partial:index.partial.html -->
